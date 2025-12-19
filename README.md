@@ -18,7 +18,7 @@ Baquela, E. G. (2025). *Tutoriales de Inteligencia Artificial con Julia* (v0.0.1
 
 ### BibTeX
 ```bibtex
-@software{Baquela_Tutoriales_IO_Julia_2025,
+@software{Baquela_Tutoriales_IA_Julia_2025,
   author    = {Baquela, Enrique Gabriel},
   title     = {Tutoriales de Inteligencia Artificial con Julia},
   version   = {v0.0.1-alpha},
