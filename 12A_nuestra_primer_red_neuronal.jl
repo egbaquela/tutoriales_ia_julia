@@ -78,7 +78,7 @@ function accuracy(model, test_imgs, test_labels)
 end
 
 # ╔═╡ 67ffa1bf-91d4-448f-a9aa-3ed422ceb6a5
-md"Creemos un modelo (sin entrenar) de red neuronal:"
+md"Creemos un modelo (sin entrenar) de red neuronal. La primer capa, la capa **flatten**, conveierte la matriz en un vector columna, apilando columna tras columna:"
 
 # ╔═╡ cb97693a-28f0-4899-8b47-c19e442142bb
 model_v1 = Chain(
@@ -92,7 +92,7 @@ model_v1 = Chain(
 md"Probemos predecir uno de los valroes del conjunto de test:"
 
 # ╔═╡ e9d376ff-c19d-4d9b-b39d-acf1ef0a8533
-predict = model_v1(Flux.unsqueeze(test_imgs[:,:,1],dims=3))
+predict_antes = model_v1(Flux.unsqueeze(test_imgs[:,:,1],dims=3))
 
 # ╔═╡ 4f4a1f0a-18d4-4b54-be4f-f2b5cb7cfbc0
 accuracy(model_v1, test_imgs, test_labels)
@@ -116,6 +116,9 @@ begin
 		println(accuracy(model_v1, train_imgs,train_labels))
 	end
 end
+
+# ╔═╡ cbb779c4-596d-40d9-aeeb-52ad99713498
+predict_despues = model_v1(Flux.unsqueeze(test_imgs[:,:,1],dims=3))
 
 # ╔═╡ 750f7524-fd9c-4538-91cb-b77eff010a24
 accuracy(model_v1, test_imgs, test_labels)
@@ -2394,6 +2397,7 @@ version = "17.7.0+0"
 # ╠═4f4a1f0a-18d4-4b54-be4f-f2b5cb7cfbc0
 # ╟─e2c37aef-ac19-4cc7-b755-07b49ad5e7a3
 # ╠═53433272-0622-4bfd-8bea-ef14607c2e58
+# ╠═cbb779c4-596d-40d9-aeeb-52ad99713498
 # ╠═750f7524-fd9c-4538-91cb-b77eff010a24
 # ╟─88f22d6e-7a42-464a-a384-546b85fed49c
 # ╠═d7649a15-f257-4974-b8e3-39fa41029da2
