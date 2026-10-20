@@ -84,7 +84,7 @@ md"Leamos el modelo guardado en archivo:"
 BSON.@load "trained_models/red_neuronal_flux_simple.bson" model_v1
 
 # ╔═╡ 70c9d24b-b336-4efe-8290-57b7ec7303aa
-predict = model_v1(Flux.unsqueeze(test_imgs[:,:,1],dims=3))
+predict_antes = model_v1(Flux.unsqueeze(test_imgs[:,:,1],dims=3))
 
 # ╔═╡ 4e5be87c-4f1b-468b-828a-760fcf788db3
 accuracy(model_v1, test_imgs, test_labels)
@@ -108,6 +108,9 @@ begin
 		println(accuracy(model_v1, train_imgs,train_labels))
 	end
 end
+
+# ╔═╡ 3f55b351-3ec1-4a75-b5a0-cb8112cccfcf
+predict_después = model_v1(Flux.unsqueeze(test_imgs[:,:,1],dims=3))
 
 # ╔═╡ 34d4b099-bedc-411c-8903-6dcb13d42cc4
 accuracy(model_v1, test_imgs, test_labels)
@@ -2370,6 +2373,7 @@ version = "17.7.0+0"
 # ╠═4e5be87c-4f1b-468b-828a-760fcf788db3
 # ╟─e3bcd5e4-3e5e-4898-be41-e33d8b734eef
 # ╠═f4b6500b-e4de-44d9-85b2-0718f75fbf46
+# ╠═3f55b351-3ec1-4a75-b5a0-cb8112cccfcf
 # ╠═34d4b099-bedc-411c-8903-6dcb13d42cc4
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
